@@ -1,111 +1,107 @@
 import type { Project, Skill, SocialLink } from '@types'
 
-/**
- * Portfolio data - centralized source of truth for content
- * Update these objects to customize your portfolio
- */
-
 export const profile = {
-  name: 'Alex Johnson',
-  role: 'Senior Frontend Engineer',
-  bio: 'Building beautiful, performant web experiences with modern technologies. 5+ years of experience in React, TypeScript, and web performance optimization.',
-  email: 'alex@example.com',
-  location: 'San Francisco, CA',
+  name: 'John Joshua Mbaya',
+  role: 'Frontend Developer | Digital Operations | AI-Assisted Workflows',
+  bio: 'Information Technology student building practical web interfaces and digital tools, with hands-on experience in customer communication, business operations, research, and AI-assisted workflows.',
+  email: 'Johnjoshuambaya@gmail.com',
+  location: 'Nigeria • currently based in Togo',
 }
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Full-stack marketplace with real-time inventory management',
-    longDescription: 'A scalable e-commerce platform built with React and TypeScript, featuring real-time inventory updates, payment processing, and admin dashboard. Achieved 98 Lighthouse score.',
-    image: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe API'],
+    title: 'Yohriae NGO Website',
+    description: 'Live NGO website with admin content management and online donations',
+    longDescription: 'A live website I worked on for a Nigeria-based NGO. I used Lovable to assist with the initial UI, then continued the design and implementation work myself. The platform includes an admin area for adding and deleting posts, plus a Stripe-powered donation flow for supporters.',
+    image: '',
+    technologies: ['Lovable-assisted UI', 'Admin Dashboard', 'Content Management', 'Stripe', 'Vercel'],
     links: {
-      github: 'https://github.com',
-      live: 'https://example.com',
+      live: 'https://yohriae-website.vercel.app/',
     },
   },
   {
     id: 2,
-    title: 'Design System Component Library',
-    description: 'Reusable component library with Storybook documentation',
-    longDescription: 'Comprehensive design system with 50+ components, extensive Storybook documentation, and accessibility guidelines. Used across 10+ internal projects reducing development time by 40%.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
-    technologies: ['React', 'TypeScript', 'Storybook', 'Tailwind CSS', 'Jest'],
+    title: 'Rymdix Technologies',
+    description: 'Web platform with public pages, admin workflows, blog, leads, and Supabase integration',
+    longDescription: 'A React and TypeScript web platform for a software and automation brand. The project includes a responsive public website, service pages, blog functionality, contact flows, and an admin dashboard structure for managing content, leads, services, and analytics.',
+    image: '',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Supabase', 'Vercel'],
     links: {
-      github: 'https://github.com',
+      github: 'https://github.com/johnjoshuajj200m/rymdix-launchpad1',
+      live: 'https://rymdix-launchpad1.vercel.app',
     },
   },
   {
     id: 3,
-    title: 'Analytics Dashboard',
-    description: 'Real-time data visualization with interactive charts',
-    longDescription: 'Interactive analytics dashboard processing 1M+ data points, with real-time updates via WebSocket. Implemented custom visualization components and optimized rendering performance.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
-    technologies: ['React', 'D3.js', 'TypeScript', 'WebSocket', 'Redux'],
+    title: 'FlowPilot SaaS Landing Page',
+    description: 'Responsive SaaS interface focused on accessibility, interaction, and clean frontend fundamentals',
+    longDescription: 'A responsive SaaS landing page built with semantic HTML, CSS, and vanilla JavaScript. It includes mobile navigation, pricing interactions, form validation, smooth scrolling, accessibility-focused markup, and SEO metadata.',
+    image: '',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Accessibility', 'SEO'],
     links: {
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: 'https://github.com/johnjoshuajj200m/flowpilot-saas-landing',
+      live: 'https://johnjoshuajj200m.github.io/flowpilot-saas-landing/',
     },
   },
   {
     id: 4,
-    title: 'Mobile App - React Native',
-    description: 'Cross-platform fitness tracking application',
-    longDescription: 'Native iOS and Android app built with React Native and TypeScript. Features real-time location tracking, social features, and offline-first sync capability.',
-    image: 'https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux', 'Expo'],
+    title: 'Fintech Landing Page',
+    description: 'Responsive fintech-style interface with interactive customer-facing sections',
+    longDescription: 'A frontend project built with HTML, CSS, and JavaScript, focused on responsive layout, navigation, FAQ interactions, product messaging, and conversion-oriented sections.',
+    image: '',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
     links: {
-      github: 'https://github.com',
+      github: 'https://github.com/johnjoshuajj200m/fintech-landing-page',
+      live: 'https://johnjoshuajj200m.github.io/fintech-landing-page/',
     },
   },
 ]
 
 export const skills: Skill[] = [
   {
-    category: 'Frontend',
-    items: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Next.js', 'Vite'],
+    category: 'Frontend Development',
+    items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Vite'],
   },
   {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'REST APIs', 'GraphQL'],
+    category: 'Digital & AI Workflows',
+    items: ['AI-assisted research', 'Prompt development', 'Information organization', 'Web troubleshooting', 'Content workflows', 'Google Docs & Drive'],
   },
   {
-    category: 'Tools & Platform',
-    items: ['Git', 'Docker', 'AWS', 'Firebase', 'Vercel', 'CI/CD Pipelines'],
+    category: 'Customer & Business Operations',
+    items: ['Customer communication', 'Email & WhatsApp support', 'Follow-ups', 'Online research', 'Documentation support', 'Invoice & payment follow-up'],
   },
   {
-    category: 'Design & UX',
-    items: ['Figma', 'UI/UX Principles', 'Accessibility', 'Responsive Design', 'Performance Optimization'],
+    category: 'Currently Developing',
+    items: ['Linux', 'Cloud computing', 'AWS concepts', 'Azure concepts', 'DevOps', 'Networking', 'Cloud security'],
   },
 ]
 
 export const socialLinks: SocialLink[] = [
   {
     label: 'GitHub',
-    url: 'https://github.com',
+    url: 'https://github.com/johnjoshuajj200m',
     icon: 'github',
   },
   {
     label: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://www.linkedin.com/in/john-joshua-829686377/',
     icon: 'linkedin',
   },
   {
-    label: 'Twitter',
-    url: 'https://twitter.com',
+    label: 'X',
+    url: 'https://x.com/JohnJoshuaMbaya',
     icon: 'twitter',
   },
   {
     label: 'Email',
-    url: 'mailto:alex@example.com',
+    url: 'mailto:Johnjoshuambaya@gmail.com',
     icon: 'mail',
   },
 ]
 
-export const aboutText = `I'm a passionate frontend engineer with 5+ years of experience building scalable web applications. I specialize in React and TypeScript, with a strong focus on performance, accessibility, and user experience.
+export const aboutText = `I’m an Information Technology student with hands-on experience in frontend web development, digital operations, international customer communication, research, and AI-assisted workflows.
 
-My journey in tech started with a curiosity about how things work on the web. Over the years, I've evolved from a junior developer into a senior engineer who mentors teams and drives architectural decisions.
+I build practical web interfaces and digital tools, and I’m especially interested in work where technology solves a real business or operational problem. I’ve also supported international customers, suppliers, clients, and business partners through digital channels, handling follow-ups, documentation requests, payment discussions, business updates, and customer concerns.
 
-When I'm not coding, you'll find me contributing to open-source projects, writing technical blog posts, or exploring new web technologies.`
+I’m continuing to strengthen my technical skills through project-based learning while looking for remote internships and junior opportunities where I can contribute to real products, customer-facing systems, internal tools, and automation workflows.`
