@@ -1,171 +1,116 @@
-# Modern Portfolio Website
+# John Joshua Mbaya — Portfolio
 
-A professional, high-performance portfolio website built with React, TypeScript, Vite, and Tailwind CSS. Features modern UI/UX with smooth animations, responsive design, and a working contact form powered by EmailJS.
+A personal portfolio built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion.
 
-## ✨ Features
+The site presents my current frontend development work, digital operations background, AI-assisted workflows, and selected real-world projects without overstating my experience.
 
-- **Modern Stack**: React 18 + TypeScript + Vite + Tailwind CSS
-- **Smooth Animations**: Framer Motion for elegant transitions
-- **Responsive Design**: Mobile-first approach, looks great on all devices
-- **Working Contact Form**: Real email sending via EmailJS
-- **Clean Architecture**: Reusable components with TypeScript typing
-- **Fast Performance**: Optimized build with Vite
-- **SEO Ready**: Proper meta tags and semantic HTML
+## Featured Work
 
-## 🚀 Quick Start
+### Yohriae NGO Website
+A live website I worked on for a Nigeria-based NGO. I used Lovable to assist with the initial UI and continued the design and implementation work myself.
 
-### Prerequisites
-- Node.js 16+ and npm
+Key functionality includes:
+- Admin content management
+- Add and delete posts
+- Stripe-powered online donations
+- Live Vercel deployment
 
-### Installation
+Live: https://yohriae-website.vercel.app/
+
+### Rymdix Technologies
+A React and TypeScript web platform with public pages, services, blog functionality, contact flows, and an admin dashboard structure.
+
+Tech used:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase
+- Vercel
+
+Live: https://rymdix-launchpad1.vercel.app  
+Code: https://github.com/johnjoshuajj200m/rymdix-launchpad1
+
+### FlowPilot SaaS Landing Page
+A responsive SaaS interface built with HTML, CSS, and vanilla JavaScript, with interactive UI behavior, accessibility considerations, and SEO metadata.
+
+Live: https://johnjoshuajj200m.github.io/flowpilot-saas-landing/  
+Code: https://github.com/johnjoshuajj200m/flowpilot-saas-landing
+
+### Fintech Landing Page
+A responsive fintech-style frontend project using HTML, CSS, and JavaScript.
+
+Live: https://johnjoshuajj200m.github.io/fintech-landing-page/  
+Code: https://github.com/johnjoshuajj200m/fintech-landing-page
+
+## Current Skills
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+- TypeScript
+- React
+- Next.js
+- Tailwind CSS
+- Vite
+
+### Digital & AI Workflows
+- AI-assisted research
+- Prompt development
+- Information organization
+- Web troubleshooting
+- Content workflows
+
+### Business & Customer Operations
+- International customer communication
+- Email and WhatsApp communication
+- Follow-ups
+- Online research
+- Documentation support
+- Invoice and payment follow-up
+
+### Currently Developing
+- Linux
+- Cloud computing
+- AWS and Azure concepts
+- DevOps
+- Networking
+- Cloud security
+
+## Run Locally
 
 ```bash
-# 1. Clone the repository
-git clone <your-repo-url>
-cd react-project
-
-# 2. Install dependencies
+git clone https://github.com/johnjoshuajj200m/AJ-portfolio-.git
+cd AJ-portfolio-
 npm install
-
-# 3. Start development server
 npm run dev
 ```
 
-The site will open at `http://localhost:3000`
-
-### Build for Production
+Production build:
 
 ```bash
 npm run build
-npm run preview  # Preview the production build
 ```
 
-## 📧 Contact Form Setup
+## Tech Stack
 
-The contact form uses [EmailJS](https://www.emailjs.com/) to send emails. Follow these steps to configure it:
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide React
 
-### 1. Create EmailJS Account
-- Sign up at [emailjs.com](https://www.emailjs.com/)
-- Create an email service (Gmail, Outlook, etc.)
-- Create an email template with these variables:
-  - `{{from_name}}` - Sender's name
-  - `{{from_email}}` - Sender's email
-  - `{{subject}}` - Email subject
-  - `{{message}}` - Email message
+## About Me
 
-### 2. Configure Credentials
-Open `src/sections/ContactSection.tsx` and update these values (around line 26):
+I am an Information Technology student from Nigeria, currently based in Togo. I am building practical experience through frontend projects while also bringing hands-on experience in customer communication, digital operations, research, and AI-assisted productivity.
 
-```typescript
-const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'      // From EmailJS dashboard
-const SERVICE_ID = 'YOUR_SERVICE_ID'      // Your email service ID
-const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'    // Your email template ID
-```
+I am open to remote internships and junior opportunities where I can contribute to real products and continue developing my technical skills.
 
-### 3. Test the Form
-Fill out and submit the contact form - you should receive an email!
+## Contact
 
-## 🎨 Customization
-
-### Update Your Profile
-Edit `src/data/portfolio.ts`:
-
-```typescript
-export const profile = {
-  name: 'Your Name',
-  role: 'Your Role',
-  bio: 'Your bio...',
-  email: 'your@email.com',
-  location: 'Your City',
-}
-```
-
-### Add/Update Projects
-Update the `projects` array in `src/data/portfolio.ts`:
-
-```typescript
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Project Name',
-    description: 'Short description',
-    longDescription: 'Detailed description',
-    image: 'https://your-image-url.com/image.jpg',
-    technologies: ['React', 'TypeScript', 'Tailwind'],
-    links: {
-      github: 'https://github.com/username/repo',
-      live: 'https://your-project.com',
-    },
-  },
-]
-```
-
-### Update Skills
-Modify `src/data/portfolio.ts` to update the skills section.
-
-### Customize Colors
-Edit `tailwind.config.js` to change the color scheme.
-
-## 📁 Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-│   ├── Button.tsx
-│   ├── Card.tsx
-│   ├── Container.tsx
-│   ├── Section.tsx
-│   ├── Navigation.tsx
-│   └── ui/             # Advanced UI components
-├── sections/            # Page sections
-│   ├── ProjectsSection.tsx
-│   ├── SkillsSection.tsx
-│   ├── AboutSection.tsx
-│   ├── ContactSection.tsx
-│   └── Footer.tsx
-├── types/              # TypeScript definitions
-├── data/               # Static data (portfolio.ts)
-├── App.tsx             # Main app component
-└── main.tsx            # Entry point
-```
-
-## 🛠 Tech Stack
-
-- **React 18** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **EmailJS** - Contact form
-- **Lucide React** - Icons
-
-## 🚢 Deployment
-
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Import project to [Vercel](https://vercel.com)
-3. Deploy!
-
-### Netlify
-1. Build command: `npm run build`
-2. Publish directory: `dist`
-
-### GitHub Pages
-Update `vite.config.ts`:
-```typescript
-export default defineConfig({
-  base: '/your-repo-name/',
-})
-```
-
-## 📝 License
-
-MIT License - feel free to use this template for your own portfolio!
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
----
-
-**Built with ❤️ using modern web technologies**
+- GitHub: https://github.com/johnjoshuajj200m
+- LinkedIn: https://www.linkedin.com/in/john-joshua-829686377/
+- X: https://x.com/JohnJoshuaMbaya
+- Email: Johnjoshuambaya@gmail.com
