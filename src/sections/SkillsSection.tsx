@@ -15,16 +15,13 @@ const SkillCategory: React.FC<{ skill: Skill; index: number }> = ({ skill, index
       viewport={{ once: true }}
     >
       <Card>
-        <h3 className="text-lg md:text-xl font-bold text-white mb-6">
-          {skill.category}
-        </h3>
-
+        <h3 className="text-lg md:text-xl font-bold text-white mb-6">{skill.category}</h3>
         <div className="grid grid-cols-2 gap-3">
           {skill.items.map((item) => (
             <motion.div
               key={item}
               className="px-3 md:px-4 py-2 md:py-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 hover:bg-white/8 transition-colors text-xs md:text-sm text-slate-400"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
             >
               {item}
             </motion.div>
@@ -39,7 +36,6 @@ const SkillsSection: React.FC = () => {
   return (
     <Section id="skills">
       <Container>
-        {/* Section Title */}
         <motion.div
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: -20 }}
@@ -47,20 +43,18 @@ const SkillsSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">Skills & Expertise</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">Skills & Tools</h2>
           <p className="text-slate-400 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-            A comprehensive overview of technologies and tools I specialize in
+            Technologies I use today, plus the areas I am actively developing through project-based learning.
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {skills.map((skill, index) => (
             <SkillCategory key={skill.category} skill={skill} index={index} />
           ))}
         </div>
 
-        {/* Additional Info */}
         <motion.div
           className="mt-16 p-8 bg-accent/5 border border-accent/30 rounded-xl text-center"
           initial={{ opacity: 0 }}
@@ -68,9 +62,8 @@ const SkillsSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className="text-slate-300 text-lg">
-            Constantly learning and staying updated with the latest industry trends and best practices.
-            Experienced in mentoring junior developers and leading technical discussions.
+          <p className="text-slate-300 text-base md:text-lg">
+            I learn by building, testing, troubleshooting, and improving real projects. I am especially focused on frontend development, practical digital operations, AI-assisted workflows, and growing my cloud/DevOps foundation.
           </p>
         </motion.div>
       </Container>
