@@ -1,50 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, Twitter } from 'lucide-react'
 import Container from '@components/Container'
 import Section from '@components/Section'
 import { profile, socialLinks } from '@data/portfolio'
-import emailjs from '@emailjs/browser'
 
 const ContactSection: React.FC = () => {
-  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setFormStatus('loading')
-    setErrorMessage('')
-
-    const form = e.currentTarget
-
-    try {
-      // Replace with your EmailJS credentials from dashboard.emailjs.com
-      const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
-      const SERVICE_ID = 'YOUR_SERVICE_ID'
-      const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
-
-      setFormStatus('success')
-      form.reset()
-      setTimeout(() => setFormStatus('idle'), 5000)
-    } catch (error) {
-      console.error('Email sending failed:', error)
-      setFormStatus('error')
-      setErrorMessage('Failed to send message. Please try again or email me directly.')
-      setTimeout(() => {
-        setFormStatus('idle')
-        setErrorMessage('')
-      }, 5000)
-    }
-  }
-
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, React.ReactNode> = {
-      github: <Github size={24} />,
-      linkedin: <Linkedin size={24} />,
-      twitter: <Twitter size={24} />,
-      mail: <Mail size={24} />,
+      github: <Github size={22} />,
+      linkedin: <Linkedin size={22} />,
+      twitter: <Twitter size={22} />,
+      mail: <Mail size={22} />,
     }
     return icons[iconName] || null
   }
@@ -52,7 +19,6 @@ const ContactSection: React.FC = () => {
   return (
     <Section id="contact" className="bg-gradient-to-b from-slate-900/50 to-gray-900/50 border-t border-white/5">
       <Container size="md">
-        {/* Header */}
         <motion.div
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: -20 }}
@@ -60,157 +26,55 @@ const ContactSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
-          <p className="text-slate-400 text-sm md:text-base lg:text-lg">
-            Have a project in mind? Let's collaborate and create something amazing together.
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">Let’s Connect</h2>
+          <p className="text-slate-400 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
+            I’m open to remote internships, junior roles, and practical project opportunities where I can contribute and keep growing.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-xs md:text-sm font-medium text-slate-400 mb-2">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="from_name"
-                  type="text"
-                  required
-                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400/50 focus:outline-none transition-colors text-white placeholder:text-slate-500 text-sm"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-xs md:text-sm font-medium text-slate-400 mb-2">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="from_email"
-                  type="email"
-                  required
-                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400/50 focus:outline-none transition-colors text-white placeholder:text-slate-500 text-sm"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-xs md:text-sm font-medium text-slate-400 mb-2">
-                  Subject
-                </label>
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  required
-                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400/50 focus:outline-none transition-colors text-white placeholder:text-slate-500 text-sm"
-                  placeholder="Project inquiry"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-xs md:text-sm font-medium text-slate-400 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-400/50 focus:outline-none transition-colors text-white placeholder:text-slate-500 resize-none text-sm"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                disabled={formStatus === 'loading'}
-                className={`w-full py-3 rounded-lg font-semibold transition-all ${formStatus === 'success'
-                  ? 'bg-green-600 text-white'
-                  : formStatus === 'error'
-                    ? 'bg-red-600 text-white'
-                    : 'bg-blue-500 text-white hover:bg-blue-600'
-                  } disabled:opacity-50`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {formStatus === 'loading' ? 'Sending...' : formStatus === 'success' ? 'Message Sent! ✓' : formStatus === 'error' ? 'Failed to Send ✗' : 'Send Message'}
-              </motion.button>
-
-              {errorMessage && (
-                <p className="text-red-400 text-sm mt-2">{errorMessage}</p>
-              )}
-            </form>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {/* Direct Contact */}
+        <motion.div
+          className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Direct Contact</h3>
-              <p className="text-slate-400 mb-4">
-                Feel free to reach out directly via email. I usually respond within 24 hours.
+              <p className="text-sm uppercase tracking-[0.18em] text-blue-300 mb-3">Direct contact</p>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Have a role or project that fits my background?</h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                The fastest way to reach me is by email. I’m especially interested in frontend development, customer-facing technology, digital operations, AI-assisted workflows, and entry-level cloud/DevOps opportunities.
               </p>
-              <motion.a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-3 text-lg font-semibold text-slate-300 hover:text-white transition-colors"
-                whileHover={{ scale: 1.05 }}
+              <a
+                href={`mailto:${profile.email}?subject=Opportunity for John Joshua Mbaya`}
+                className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
               >
-                <Mail size={28} />
-                {profile.email}
-              </motion.a>
+                <Mail size={18} /> Email Me
+              </a>
+              <p className="mt-4 text-sm text-slate-500 break-all">{profile.email}</p>
             </div>
 
-            {/* Social Links */}
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Connect</h3>
-              <p className="text-slate-400 mb-6">
-                Follow me on social media for updates and insights.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="text-lg font-semibold text-white mb-4">Professional links</h3>
+              <div className="grid gap-3">
                 {socialLinks.map((link) => (
                   <motion.a
                     key={link.label}
                     href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 hover:bg-white/8 transition-colors"
-                    whileHover={{ y: -4 }}
+                    target={link.icon === 'mail' ? undefined : '_blank'}
+                    rel={link.icon === 'mail' ? undefined : 'noopener noreferrer'}
+                    className="flex items-center gap-3 p-4 bg-black/20 border border-white/10 rounded-lg hover:border-white/20 hover:bg-white/8 transition-colors"
+                    whileHover={{ x: 4 }}
                   >
                     <span className="text-slate-300">{getIconComponent(link.icon)}</span>
-                    <span className="text-slate-400">{link.label}</span>
+                    <span className="text-slate-300">{link.label}</span>
                   </motion.a>
                 ))}
               </div>
             </div>
-
-            {/* Availability */}
-            <div className="p-6 bg-white/5 border border-white/10 rounded-lg">
-              <p className="text-slate-400 mb-2">
-                <span className="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
-                <span className="font-semibold text-white">Currently Available</span>
-              </p>
-              <p className="text-sm text-slate-400">
-                Open to interesting projects and collaboration opportunities.
-              </p>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </Container>
     </Section>
   )
